@@ -1,0 +1,22 @@
+// function.falcon
+function myFunction(param)
+    local x = param
+    x += 10
+    if x > 15
+        x -= 5
+    else
+        x += 5
+    end
+    for i in [0:2]
+        x += i
+    return x
+end
+
+write("Enter an integer: ")
+input = readLine()
+param = input.toInt()
+if param == 0 and input != "0"
+    write("Invalid input\n")
+else
+    write("%d\n", myFunction(param))
+end

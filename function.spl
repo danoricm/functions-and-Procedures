@@ -1,0 +1,23 @@
+# function.spl
+proc myFunction(param) {
+    x = param + 10
+    if x > 15 then
+        x = x - 5
+    else
+        x = x + 5
+    end if
+    for i = 0 to 2 do
+        x = x + i
+    end for
+    return x
+}
+
+start {
+    write("Enter an integer: ")
+    param = readint()
+    if param = 0 and input != "0" then
+        write("Invalid input\n")
+    else
+        write(myFunction(param), "\n")
+    end if
+}

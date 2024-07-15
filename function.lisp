@@ -1,0 +1,16 @@
+;; function.lisp
+(defun my-function (param)
+  (let ((x param))
+    (setq x (+ x 10))
+    (if (> x 15)
+        (setq x (- x 5))
+      (setq x (+ x 5)))
+    (dotimes (i 3 x)
+      (setq x (+ x i)))))
+
+(let ((input (read-line))
+      (param))
+  (setq param (parse-integer input))
+  (if (and (= param 0) (not (string= input "0")))
+      (format t "Invalid input~%")
+    (format t "~d~%" (my-function param))))

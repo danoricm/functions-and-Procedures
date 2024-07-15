@@ -1,0 +1,23 @@
+# function.icon
+procedure myFunction(param)
+    x := param
+    x +:= 10
+    if x > 15 then
+        x -:= 5
+    else
+        x +:= 5
+    every i := 0 to 2 do
+        x +:= i
+    return x
+end
+
+procedure main()
+    write("Enter an integer: ")
+    input := read()
+    param := integer(input)
+    if param = 0 & input ~== "0" then {
+        write("Invalid input")
+        return
+    }
+    write(myFunction(param))
+end

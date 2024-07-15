@@ -1,0 +1,15 @@
+⍝ function.dyalogapl
+MyFunction ← {
+    x ← ⍵ + 10
+    x ← x > 15: x - 5 ⋄ x + 5
+    x + +/⍳3
+}
+
+input ← ⎕
+param ← ⎕ ← ⍎input
+
+if 0=param∧input≠'0' then
+    ⎕←'Invalid input'
+else
+    ⎕←MyFunction param
+end if

@@ -1,0 +1,26 @@
+* function.fox
+FUNCTION MyFunction
+PARAMETERS param
+    LOCAL x, i
+    x = param
+    x = x + 10
+    IF x > 15 THEN
+        x = x - 5
+    ELSE
+        x = x + 5
+    ENDIF
+    FOR i = 0 TO 2
+        x = x + i
+    NEXT
+    RETURN x
+ENDFUNC
+
+PARAMETERS input
+LOCAL param
+input = INPUTBOX("Enter an integer:", "Input", "")
+param = VAL(input)
+IF param = 0 AND input <> "0" THEN
+    MESSAGEBOX("Invalid input")
+ELSE
+    MESSAGEBOX(STR(MyFunction(param)))
+ENDIF

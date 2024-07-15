@@ -1,0 +1,32 @@
+/* function.pli */
+DCL MyFunction ENTRY RETURNS(FIXED DECIMAL(5)) (FIXED DECIMAL(5));
+DCL Param FIXED DECIMAL(5);
+
+MyFunction: PROC (Param) RETURNS(FIXED DECIMAL(5));
+    DCL X FIXED DECIMAL(5);
+    DCL I FIXED DECIMAL(5);
+    X = Param;
+    X = X + 10;
+    IF X > 15 THEN
+        X = X - 5;
+    ELSE
+        X = X + 5;
+    END IF;
+    DO I = 0 TO 2;
+        X = X + I;
+    END;
+    RETURN X;
+END MyFunction;
+
+DCL Param FIXED DECIMAL(5);
+DCL Input CHAR(10);
+
+PUT SKIP LIST ('Enter an integer: ');
+GET LIST (Input);
+Param = NUMVAL(Input);
+
+IF Param = 0 & Input ^= '0' THEN
+    PUT SKIP LIST ('Invalid input');
+ELSE
+    PUT SKIP LIST (MyFunction(Param));
+END;

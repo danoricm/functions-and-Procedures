@@ -1,0 +1,20 @@
+fun my_function(param: int): int {
+  var x = param
+  x += 10
+  if x > 15 then
+    x -= 5
+  else
+    x += 5
+  for i in range(0, 3) {
+    x += i
+  }
+  return x
+}
+
+println("Enter an integer: ")
+input = readln()
+param = input.toInt()
+if param == 0 && input != "0" then
+  println("Invalid input")
+else
+  println(my_function(param))

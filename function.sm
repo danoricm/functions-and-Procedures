@@ -1,0 +1,23 @@
+; function.sm
+function myFunction(param)
+    var x = param
+    x = x + 10
+    if x > 15
+        x = x - 5
+    else
+        x = x + 5
+    end if
+    for i = 0 to 2 do
+        x = x + i
+    end for
+    return x
+end function
+
+println("Enter an integer: ")
+var input = readln()
+var param = toInt(input)
+if param == 0 and input != "0"
+    println("Invalid input")
+else
+    println(myFunction(param))
+end

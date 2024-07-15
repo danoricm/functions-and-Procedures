@@ -1,0 +1,32 @@
+$ include "seed7_05.s7i";
+
+func integer: myFunction (in integer param) is func
+  local
+    var integer x is param;
+  begin
+    x := x + 10;
+    if x > 15 then
+      x := x - 5;
+    else
+      x := x + 5;
+    end if;
+    for i range 0 to 2 do
+      x := x + i;
+    end for;
+    return x;
+  end func;
+
+const proc: main is func
+  var
+    integer param is 0;
+    string input;
+  begin
+    write("Enter an integer: ");
+    input := get_line();
+    param := integer(input);
+    if param = 0 and input /= "0" then
+      writeln("Invalid input");
+    else
+      writeln(myFunction(param));
+    end if;
+  end func;

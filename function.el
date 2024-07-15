@@ -1,0 +1,16 @@
+;; function.el
+(defun my-function (param)
+  (let ((x param))
+    (setq x (+ x 10))
+    (if (> x 15)
+        (setq x (- x 5))
+      (setq x (+ x 5)))
+    (dotimes (i 3 x)
+      (setq x (+ x i)))))
+
+(let ((input (read-string "Enter an integer: "))
+      param)
+  (setq param (string-to-number input))
+  (if (and (= param 0) (not (string= input "0")))
+      (message "Invalid input")
+    (message "%d" (my-function param))))

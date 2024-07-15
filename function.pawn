@@ -1,0 +1,29 @@
+// function.p
+new myFunction(new param) {
+    new x = param;
+    x += 10;
+    if (x > 15) {
+        x -= 5;
+    } else {
+        x += 5;
+    }
+    for (new i = 0; i < 3; i++) {
+        x += i;
+    }
+    return x;
+}
+
+main() {
+    new input[10];
+    new param;
+
+    printf("Enter an integer: ");
+    gets(input, sizeof(input));
+    param = strval(input);
+
+    if (param == 0 && input[0] != '0') {
+        printf("Invalid input\n");
+    } else {
+        printf("%d\n", myFunction(param));
+    }
+}

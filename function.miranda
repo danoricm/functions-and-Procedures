@@ -1,0 +1,8 @@
+|| function.miranda
+my_function param = let
+    x = param + 10
+    x' = if x > 15 then x - 5 else x + 5
+    in x' + sum [0..2]
+
+main = show (my_function param)
+|| Your code here
